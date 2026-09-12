@@ -6,7 +6,6 @@ import {
   ChefHat,
   Sparkles,
   ShieldCheck,
-  Github,
   RotateCcw,
   CheckCircle2,
   CalendarCheck,
@@ -222,19 +221,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Actions & Utilities */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Host on GitHub button */}
-            <button
-              id="open-github-export-button"
-              type="button"
-              onClick={() => setIsGitHubModalOpen(true)}
-              className="px-3 py-2 rounded-xl border border-stone-200 hover:bg-stone-100 text-stone-700 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer"
-              title="View instructions to host on GitHub"
-            >
-              <Github className="w-4 h-4" />
-              <span className="hidden md:inline">Host on GitHub</span>
-            </button>
+    
 
             {/* Chef Remy Chat */}
             <button
@@ -244,7 +231,7 @@ export default function App() {
               className="px-3 py-2 rounded-xl border border-stone-200 hover:border-emerald-500 hover:text-emerald-700 text-stone-700 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer"
             >
               <ChefHat className="w-4 h-4 text-emerald-600" />
-              <span className="hidden sm:inline">Ask Chef Remy</span>
+              <span className="hidden sm:inline">Ask Chef Remi</span>
             </button>
 
             {/* Delivery Cart Button */}
