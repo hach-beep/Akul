@@ -1,0 +1,7 @@
+{
+  "name": "Fridge Meal AI & Grocery Assistant",
+  "description": "AI agent that analyzes fridge photos to suggest delicious meals and connects with local grocery delivery services for missing ingredients.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
