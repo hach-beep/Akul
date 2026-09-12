@@ -21,7 +21,6 @@ import { AnalysisOverview } from "./components/AnalysisOverview.tsx";
 import { MealCard } from "./components/MealCard.tsx";
 import { GroceryCartDrawer } from "./components/GroceryCartDrawer.tsx";
 import { ChefCopilotDrawer } from "./components/ChefCopilotDrawer.tsx";
-import { GitHubExportModal } from "./components/GitHubExportModal.tsx";
 import { requestFridgeAnalysis, AnalysisPreferences } from "./services/apiClient.ts";
 import {
   AnalysisResult,
@@ -57,7 +56,6 @@ export default function App() {
   // Chef Copilot & Modals
   const [isChefCopilotOpen, setIsChefCopilotOpen] = useState<boolean>(false);
   const [chefContextMeal, setChefContextMeal] = useState<string | undefined>(undefined);
-  const [isGitHubModalOpen, setIsGitHubModalOpen] = useState<boolean>(false);
 
   // Meal Tier Filter
   const [tierFilter, setTierFilter] = useState<"all" | "ready_now" | "quick_trip" | "gourmet_upgrade">("all");
@@ -495,19 +493,12 @@ export default function App() {
       <footer className="mt-auto border-t border-stone-200 bg-white py-6 text-xs text-stone-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-stone-700">Fridge Meal AI</span>
+            <span className="font-semibold text-stone-700">Akul</span>
             <span>·</span>
-            <span>Multimodal Vision Powered by Gemini 3.8 Flash</span>
+          
           </div>
 
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setIsGitHubModalOpen(true)}
-              className="hover:text-stone-900 transition underline cursor-pointer"
-            >
-              Export / Deploy on GitHub Pages
-            </button>
+        
             <span>·</span>
             <span>Local Delivery Partners: Instacart, Walmart, Amazon Fresh</span>
           </div>
@@ -536,11 +527,6 @@ export default function App() {
         onClose={() => setIsChefCopilotOpen(false)}
         fridgeItems={analysisResult?.detectedIngredients.map((i) => i.name) || []}
         initialContextMeal={chefContextMeal}
-      />
-
-      <GitHubExportModal
-        isOpen={isGitHubModalOpen}
-        onClose={() => setIsGitHubModalOpen(false)}
       />
     </div>
   );
